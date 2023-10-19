@@ -1,7 +1,6 @@
-# Kafka and Zookeeper
-FROM alpine:3.9.2
+FROM openjdk:8
 
-RUN apk add --update openjdk8-jre supervisor bash gcompat
+RUN apt update -y && apt install -y supervisor
 
 ENV ZOOKEEPER_VERSION 3.4.13
 ENV ZOOKEEPER_HOME /opt/zookeeper-"$ZOOKEEPER_VERSION"
